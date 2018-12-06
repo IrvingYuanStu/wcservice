@@ -22,13 +22,13 @@
     <!--mybatis-Spring整合配置-->
     <bean id="wcsSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="basicDataSource"/>
-        <property name="typeAliasesPackage" value="com.irving.wcs"/>
+        <property name="typeAliasesPackage" value="com.irving.wcs.dao.domain"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
     <!--mybatis-spring配置，解决Spring启动时可能造成的placeHolder没有加载完成的异常-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="wcsSqlSessionFactory"/>
-        <property name="basePackage" value="com.irving.wcs"/>
+        <property name="basePackage" value="com.irving.wcs.mapper"/>
     </bean>
 
     <!--Spring 事务管理-->
