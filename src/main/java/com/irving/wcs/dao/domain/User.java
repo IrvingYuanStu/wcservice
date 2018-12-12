@@ -13,9 +13,6 @@ public class User {
     /** 用户主键 */
     private String userId;
 
-    /** 用户账号 */
-    private String userCode;
-
     /** 用户姓名 */
     private String userName;
 
@@ -31,14 +28,6 @@ public class User {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public String getUserCode() {
-        return userCode;
-    }
-
-    public void setUserCode(String userCode) {
-        this.userCode = userCode;
     }
 
     public String getUserName() {

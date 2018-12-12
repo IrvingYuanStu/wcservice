@@ -19,9 +19,15 @@ public class loginController {
     @Resource
     private UserService userServiceImpl;
 
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+       return "/login";
+    }
+
     @RequestMapping(value="/createUser", method = RequestMethod.GET)
     @ResponseBody
-    public Response login(@RequestParam("userName") String name, @RequestParam("passWord") String passWord) {
+    public Response createUser(@RequestParam("userName") String name, @RequestParam("passWord") String passWord) {
 
         String userCode = name + "_code";
         userServiceImpl.createUser(userCode, name, passWord);
@@ -29,6 +35,15 @@ public class loginController {
         Response resp = new Response();
         resp.setStateCode(200);
         resp.setMsg("登陆失败");
+        return resp;
+    }
+
+    @RequestMapping(value="/test", method = RequestMethod.GET)
+    @ResponseBody
+    public Response test(@RequestParam("userName") String name) {
+        Response resp = new Response();
+        resp.setStateCode(200);
+        resp.setMsg(name+"_"+System.currentTimeMillis());
         return resp;
     }
 }

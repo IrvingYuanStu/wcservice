@@ -50,4 +50,10 @@
     <!--注解事务-->
     <tx:annotation-driven transaction-manager="basicTransactionManager"/>
 
+
+    <!--自定义类:sql脚本执行器-->
+    <bean id="sqlExecutor" class="com.irving.wcs.common.db.SqlScriptExec">
+        <constructor-arg ref="basicDataSource"/>
+    </bean>
+
 </beans>

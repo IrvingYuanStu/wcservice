@@ -12,10 +12,10 @@
         <param-value>classpath*:application-context.xml</param-value>
     </context-param>
 
-    <!--初始化Spring上下文-->
+    <!--自定义初始化监听器,spring上下文-->
     <listener>
         <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-        <listener-class>com.irving.wcs.WcsContextLoadListener</listener-class>
+        <listener-class>com.irving.wcs.WcsContextInitListener</listener-class>
     </listener>
 
     <!--springMVC配置-->
